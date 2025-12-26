@@ -3,6 +3,7 @@ import NodeSidebar from './NodeSidebar/NodeSidebar'
 import PipelineGraph from './PipelineGraph'
 import PipelineRunner from './PipelineRunner'
 import { createStore, Provider } from 'jotai';
+import { ReactFlowProvider } from '@xyflow/react';
 
 const Timemachine = () => {
 
@@ -14,9 +15,11 @@ const Timemachine = () => {
   return (
     <div className='w-full h-dvh flex items-start justify-between font-sg p-6'>
         <Provider store={SideBarstore}>
-          <NodeSidebar/>
+            <NodeSidebar/>
+            <ReactFlowProvider>
+              <PipelineGraph/>
+            </ReactFlowProvider>
         </Provider>
-        <PipelineGraph/>
         <PipelineRunner/>
     </div>
   )
