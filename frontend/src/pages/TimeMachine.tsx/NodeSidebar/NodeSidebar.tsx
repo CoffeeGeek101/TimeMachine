@@ -56,7 +56,7 @@ const NodeSidebar = () => {
                 <BaseList 
                 data={sidebarOptions} 
                 onClickHandler={handleClick} 
-                listItem={({...props})=> <NodeSidebarItem options={props}/>}
+                listItem={({...props})=> <NodeSidebarItem options={props.item}/>}
                 />
                 {/* <div>fav</div> */}
             </div>

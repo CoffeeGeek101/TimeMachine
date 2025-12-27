@@ -738,7 +738,7 @@
 
 "@xyflow/react@^12.10.0":
   version "12.10.0"
-  resolved "https://registry.npmjs.org/@xyflow/react/-/react-12.10.0.tgz"
+  resolved "https://registry.yarnpkg.com/@xyflow/react/-/react-12.10.0.tgz#d2924cb38074e8e6141643dd8bd7a0666aaac868"
   integrity sha512-eOtz3whDMWrB4KWVatIBrKuxECHqip6PfA8fTpaS2RUGVpiEAe+nqDKsLqkViVWxDGreq0lWX71Xth/SPAzXiw==
   dependencies:
     "@xyflow/system" "0.0.74"
@@ -1718,7 +1718,7 @@ use-sync-external-store@^1.2.2:
 
 uuid@^13.0.0:
   version "13.0.0"
-  resolved "https://registry.npmjs.org/uuid/-/uuid-13.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-13.0.0.tgz#263dc341b19b4d755eb8fe36b78d95a6b65707e8"
   integrity sha512-XQegIaBTVUjSHliKqcnFqYypAd4S+WCYt5NIeRs6w/UAry7z8Y9j5ZwRRL4kzq9U3sD6v+85er9FvkEaBpji2w==
 
 "vite@npm:rolldown-vite@7.2.5":

@@ -16,6 +16,10 @@ const NodeSidebarItem : FC<NodeSidebarItemI> = ({options}) => {
     const isSidebarOpen = useAtomValue(isSidebarOpen_);
     const activeNodeSection = useAtomValue(activeNodeSectionId_);
 
+    const handleDrag = (e : any) => {
+        console.log(e);
+    }
+    
   return (
         <>
         {
@@ -66,8 +70,8 @@ const NodeSidebarItem : FC<NodeSidebarItemI> = ({options}) => {
                     className='ml-5 w-[89%]'>
                         <BaseList 
                         data={NodeOptions[options.index]} 
-                        listItem={(options) => <NodeItem options={options}/>}
-                        onClickHandler={()=>{}}
+                        listItem={({...props}) => <NodeItem options={props.item} onDragHandler={props.dragHandler!}/>} //the actual draggables. 
+                        onDragHandler={handleDrag}
                         className='gap-3'
                         />
                     </motion.div>
