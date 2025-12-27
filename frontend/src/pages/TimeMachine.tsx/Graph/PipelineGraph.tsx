@@ -2,8 +2,11 @@
 
 import { Background, ReactFlow, useEdgesState, useNodesState, useReactFlow, type Node } from '@xyflow/react'
 import { useAtomValue, useSetAtom } from 'jotai'
-import React, { useId } from 'react'
-import { dragState, updateDragState } from './DragandDropContext'
+import React from 'react'
+import { dragState, updateDragState } from '../DragandDropContext'
+import {v4 as uuid4} from 'uuid';
+import { createID } from './util';
+
 
 const PipelineGraph = () => {
 
@@ -13,23 +16,19 @@ const PipelineGraph = () => {
   const { screenToFlowPosition } = useReactFlow();
   const [nodes, setNodes, onNodesChange] = useNodesState<Node>([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
-  const getID = useId();
+  // const getID = useId();
+
 
   const onPointerUp = (e : React.PointerEvent<HTMLDivElement>) => {
-    console.log("wait is this event getting triggered ?")
-    console.log(draggedNode, "yoo")
     if(!draggedNode) return;
 
-    console.log('data', draggedNode);
-    console.log('2. [Canvas] Raw Pointer Event:', { x: e.clientX, y: e.clientY });
-    const flowPosition = screenToFlowPosition({x : e.clientX, y : e.clientY});
-    console.log('3. [Canvas] Dropping Node at:', flowPosition);
+    const flowPosition = screenToFlowPosition({x : e.clientX - draggedNode.offset.x , y : e.clientY - draggedNode.offset.y});
 
     const newNode = {
-      id: getID,
+      id: uuid4(),
       type: draggedNode.nodeType, 
       position: flowPosition,
-      data: { label: draggedNode.label },
+      data: { label: createID(draggedNode.label) },
     };
 
     setNodes((nds) => nds.concat(newNode));
@@ -47,7 +46,7 @@ const PipelineGraph = () => {
       onNodesChange={onNodesChange}
       onEdgesChange={onEdgesChange}
       fitView>
-        <Background/>
+        <Background style={{pointerEvents:'none'}}/>
       </ReactFlow>
     </div>
   )

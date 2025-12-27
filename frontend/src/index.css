@@ -5,3 +5,7 @@
 @theme {
     --font-sg: "Space Grotesk", sans-serif;
 }
+
+.react-flow__panel{
+    display: none;
+}

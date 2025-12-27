@@ -1,4 +1,4 @@
-import { ArrowsDownUpIcon, AsteriskSimpleIcon, BracketsCurlyIcon, CubeIcon, DresserIcon, FlowArrowIcon, FunctionIcon, PentagramIcon } from "@phosphor-icons/react";
+import { AsteriskSimpleIcon, BracketsCurlyIcon, CubeIcon, DresserIcon, FlowArrowIcon, FunctionIcon, PentagramIcon } from "@phosphor-icons/react";
 import type { JSX } from "react";
 
 export type sideBarNodesT = {
@@ -53,17 +53,17 @@ export const NodeOptions : Record<string,NodeOptionT[]> = {
         {
             name : "Array",
             logo : ({...props}) => <PentagramIcon {...props}/>,
-            index : "array-10"
+            index : "array-10-0"
         },
         {
             name : "Stack",
             logo : ({...props}) => <PentagramIcon {...props}/>,
-            index : "stack-10"
+            index : "stack-10-0"
         },
         {
             name : "LinkedList",
             logo : ({...props}) => <PentagramIcon {...props}/>,
-            index : "ll-10"
+            index : "ll-10-0"
         },
     ],
     "vr-1" : [

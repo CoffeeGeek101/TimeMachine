@@ -6,6 +6,7 @@ import { atom } from "jotai";
 export type dragState = {
     nodeType : string;
     label : string;
+    offset : {x : number, y : number}
 }
 
 export const dragState = atom<dragState | null>(null);
