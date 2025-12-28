@@ -1,11 +1,12 @@
 import { type FC } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '../../../utils/dynamicTailwind'
-import { NodeOptions, type sideBarNodesT } from './util'
+import { type sideBarNodesT } from './util'
 import { useAtomValue } from 'jotai'
 import { activeNodeSectionId_, isSidebarOpen_ } from './context'
 import BaseList from '../../../component/BaseList'
 import NodeItem from './NodeItem'
+import { NODEOPTIONS } from '../MasterNodeRegistry'
 
 interface NodeSidebarItemI {
     options : sideBarNodesT,
@@ -69,7 +70,7 @@ const NodeSidebarItem : FC<NodeSidebarItemI> = ({options}) => {
                     transition={{ duration: 0.2, delay: 0.2 }}
                     className='ml-5 w-[89%]'>
                         <BaseList 
-                        data={NodeOptions[options.index]} 
+                        data={NODEOPTIONS[options.index]} 
                         listItem={({...props}) => <NodeItem options={props.item} onDragHandler={props.dragHandler!}/>} //the actual draggables. 
                         onDragHandler={handleDrag}
                         className='gap-3'
