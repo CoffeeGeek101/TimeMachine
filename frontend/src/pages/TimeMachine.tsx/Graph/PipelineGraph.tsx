@@ -6,6 +6,7 @@ import React from 'react'
 import { dragState, updateDragState } from '../DragandDropContext'
 import {v4 as uuid4} from 'uuid';
 import { createID } from './util';
+import { NODETYPES } from '../MasterNodeRegistry';
 
 
 const PipelineGraph = () => {
@@ -35,7 +36,7 @@ const PipelineGraph = () => {
     setDraggedNode(null);
   }
 
-
+  // console.log(NODETYPES)
   return (
     <div className='flex-3 h-full'
     onPointerUp={(e)=>onPointerUp(e)}
@@ -45,6 +46,7 @@ const PipelineGraph = () => {
       edges={edges} 
       onNodesChange={onNodesChange}
       onEdgesChange={onEdgesChange}
+      nodeTypes={NODETYPES}
       fitView>
         <Background style={{pointerEvents:'none'}}/>
       </ReactFlow>
